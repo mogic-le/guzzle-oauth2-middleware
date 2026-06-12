@@ -10,7 +10,7 @@ class AddAuthorizationHeaderTest extends TestCase
     private $mockOauth2Provider;
     private $mockAccessToken;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mockOauth2Provider = $this->createMock(\League\OAuth2\Client\Provider\AbstractProvider::class);
         $this->mockAccessToken = $this->createMock(\League\OAuth2\Client\Token\AccessToken::class);
@@ -35,7 +35,7 @@ class AddAuthorizationHeaderTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage('Config value `grant_type` needs to be specified.');
 
-        
+
         $addAuthorizationHeader($mockRequest);
     }
 
