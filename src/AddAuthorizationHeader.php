@@ -9,8 +9,6 @@ use Psr\Http\Message\RequestInterface;
 
 class AddAuthorizationHeader
 {
-    const CACHE_KEY_PREFIX = 'oauth2-token-';
-
     private $provider;
     private $cacheHandler;
     private $config;
