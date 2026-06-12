@@ -23,13 +23,13 @@ class ClientBuilder
 
         $stack->setHandler(new CurlHandler());
 
-        $stack = static::addHeaderMiddlewareToStack(
+        $stack = static::addRetryMiddlewareToStack(
             $stack,
             $oauthProvider,
             $tokenOptions,
             $cacheHandler
         );
-        $stack = static::addRetryMiddlewareToStack(
+        $stack = static::addHeaderMiddlewareToStack(
             $stack,
             $oauthProvider,
             $tokenOptions,
